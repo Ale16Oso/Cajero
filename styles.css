@@ -1,0 +1,43 @@
+body{
+    background-color: #1d1b19;
+}
+
+.formulario{
+    display: flex;
+}
+
+.pelicula{
+    width: 70% ;
+    margin-top: 10%;
+}
+
+.pelicula img{
+    border-radius: 10px;
+}
+
+.formulario form{
+    padding: 10%;
+    margin-top: 5%;
+    width: 60%;
+    color: white;
+}
+
+.opciones{
+    display: flex;
+}
+
+.opciones form{
+    padding: 5%;
+    margin-top: 5%;
+    width: 60%;
+    color: white;
+}
+
+.logo{
+    width: 40% ;
+    margin-top: 10%;
+}
+
+.logo img{
+    border-radius: 5px;
+}

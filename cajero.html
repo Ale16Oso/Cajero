@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cajero</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">B.A. Mi cuenta</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <section class="opciones">
+        <form class="form">
+            <h1>Bienvenido a tu cuenta </h1>
+            <div id="micunenta">
+                <p>Usuario:  </p>
+            </div>
+          
+             <button type="button" id="btsaldo"  class="btn btn-primary">Consulta Saldo</button>  <hr>
+             <label for="">Saldo de la cuenta: </label> 
+             <input type="text" name="saldoI" id="sdoI" value="200"> <hr>
+
+            <form opcionesDR = "">
+                <input type="text" name="cant" id="cant" placeholder="Cantidad"> 
+                <small class="form-text text-muted">Monto de la operación</small><hr>
+                <input type="button" value="Deposito" id="btdep" class="btn btn-primary" onclick="deposito()">
+                <input type="button" value="Retiro" id="btret" class="btn btn-primary" onclick="retiro()"><br>
+                <br>
+                <button type="button" id="btsal"  class="btn btn-primary">Salir</button>
+ <!--
+                <button type="button" id="btdep"  class="btn btn-primary">Deposito</button> 
+                <button type="button" id="btret"  class="btn btn-primary">Retiro</button> 
+--> 
+            </form>
+ <!--
+             <input type="number" name="cant" id="cant" placeholder="Cantidad"> <hr>
+             <button type="button" id="btdep"  class="btn btn-primary">Deposito</button>  <hr>
+       
+             <button type="button" id="btret"  class="btn btn-primary">Retiro</button>        
+-->            
+        </form>  
+        <script>
+            console.log(cant + " " + sdoI)
+            function deposito() {
+                var cantM =parseInt(document.getElementById("cant").value);
+                var cantI =parseInt(document.getElementById("sdoI").value);
+                document.getElementById("sdoI").value=(cantI+cantM); 
+                console.log(cant + " " + sdoI)
+            }
+
+            function retiro() {
+                var cantM =parseInt(document.getElementById("cant").value);
+                var cantI =parseInt(document.getElementById("sdoI").value);
+                document.getElementById("sdoI").value=(cantI-cantM); 
+                console.log(cant + " " + sdoI)
+                if (sdoI > "10") {
+                    document.getElementById("sdoI").value=(cantI);
+                    alert("su saldo no debe ser menor a 10");                    
+                } 
+            }
+        </script>
+
+        <section class="logo">
+            <img src="logoabundancia.png" width="60%" alt="Foto-Pelicula"> 
+        </section>
+    <script src="maincajero.js"></script>
+</body>
+</html>
